@@ -21,6 +21,12 @@ jobs:
         run: python3 -m pip install jupyter
       - name: Install librsvg
         run: sudo apt-get install librsvg2-bin
+      - name: Install JuliaMono font
+        run: |
+          mkdir -p ~/.local/share/fonts/JuliaMono
+          wget -q -O /tmp/JuliaMono-ttf.tar.gz https://github.com/cormullion/juliamono/releases/download/v0.060/JuliaMono-ttf.tar.gz
+          tar -xzf /tmp/JuliaMono-ttf.tar.gz -C ~/.local/share/fonts/JuliaMono
+          fc-cache -f ~/.local/share/fonts/JuliaMono
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         env:

@@ -1,0 +1,20 @@
+---
+title: "test"
+format:
+  pdf:
+    monofont: JuliaMono
+engine: julia
+---
+
+Some inline `α = β`.
+
+And a code block:
+
+```{julia}
+α = π
+γ = 3.14
+if α ≥ γ
+  println("success!")
+end
+```
+
