@@ -34,13 +34,14 @@ jobs:
         with:
           tinytex: true
       - run: quarto --version
+      - run: quarto check
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: pdf
-          path: rapport.qmd
+          path: report.qmd
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: Success--Here-is-the-PDF
-          path: rapport.pdf
+          path: report.pdf
